@@ -28,7 +28,6 @@
     "run-sequence": "^1.2.1"
   },
   "scripts": {
-    "test": "npm test",
     "build": "gulp build",
     "start": "npm run build && gulp serve"
   },
