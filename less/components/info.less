@@ -1,0 +1,60 @@
+.info {
+	background: url("../img/bkg.svg") no-repeat 0 130px;
+  background-size: 100% 100%;
+
+	&__wrapper {
+		min-width: 300px;
+		margin: 0 auto;
+	}
+
+	&__title {
+		padding: 50px 10px 0px;
+		text-align: center;
+
+		span {
+			display: block;
+			margin-bottom: 15px;
+		}
+
+		span:last-child {
+			margin-top: 50px;
+			margin-bottom: 10px;
+		}
+
+		&--small {
+			font-size: 16px;
+			line-height: 25px;
+		}
+	}
+
+	&__topics-list {
+		margin-top: 0;
+		margin-bottom: 10px;
+		list-style: decimal;
+	}
+
+	&__topic {
+		padding: 5px;
+	}
+}
+
+.info-submission {
+	padding: 10px;
+	text-align: justify;
+
+	&__title {
+		text-align: center;
+	}
+}
+
+@media @tablet-width {
+	.info {
+		width:auto;
+		margin: 0;
+
+		&__wrapper {
+			.container();
+		}
+	}
+
+}

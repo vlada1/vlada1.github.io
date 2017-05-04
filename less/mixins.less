@@ -1,0 +1,21 @@
+.clearfix() {
+	&::after {
+		content:"";
+
+		display: table;
+		clear: both;
+	}
+}
+
+.container() {
+	width: 300px;
+	margin: 0 auto;
+
+	@media @tablet-width {
+		width: 640px;
+	}
+
+	@media @desktop-width {
+		width: 1100px;
+	}
+}
