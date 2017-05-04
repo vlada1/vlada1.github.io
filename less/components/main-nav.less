@@ -1,0 +1,203 @@
+.main-nav {
+	position: relative;
+	width: 300px;
+	margin: 0 auto;
+
+	&__list {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	&__item {
+		padding: 15px;
+		border-bottom: 2px solid @bordercolor;
+
+		a {
+			position: relative;
+			padding: 5px;
+			color: white;
+		}
+
+		a::after {
+			content: "";
+			position: absolute;
+			top: 100%;
+			left: 0;
+			width: 100%;
+			height: 2px;
+			background-color: white;
+			opacity: 0;
+			transition: opacity 0.3s, transform 0.3s;
+			transform: translateY(10px);
+		}
+
+		a[href]:hover::after {
+			opacity: 1;
+			transform: translateY(0px);
+		}
+
+		&--active {
+
+			a::after {
+				opacity: 1;
+				transform: translateY(0px);
+			}
+		}
+	}
+
+	/*Кнопка открытия/закрытия меню*/
+	&__toggle {
+		position: absolute;
+		top: 0;
+		right: 0;
+		z-index: 2;
+
+		display: block;
+		width: 70px;
+		height: 59px;
+
+		font-size: 0;
+
+		background-color: @bordercolor;
+		cursor: pointer;
+		border: none;
+
+	}
+
+	&--closed &__toggle::before {
+		content: "";
+		position: absolute;
+		top: 21px;
+		left: 17px;
+
+		width: 36px;
+		height: 2px;
+
+		background-color: white;
+		box-shadow: 0 8px 0 0 white,
+								0 16px 0 0 white;
+	}
+
+	&--closed &__toggle:active::before {
+		background-color: rgba(255, 255, 255, 0.3);
+		box-shadow: 0 8px 0 0 rgba(255, 255, 255, 0.3),
+								0 16px 0 0 rgba(255, 255, 255, 0.3);
+	}
+
+	&--opened &__toggle {
+
+		&::before,
+		&::after {
+			content: "";
+			position: absolute;
+			top: 29px;
+			left: 18px;
+
+			width: 36px;
+			height: 2px;
+
+			background-color: white;
+		}
+
+		&::before {
+			transform: rotate(45deg);
+			box-shadow: none;
+		}
+
+		&::after {
+			transform: rotate(-45deg);
+		}
+
+		&:active::before,
+		&:active::after {
+			background-color: rgba(255, 255, 255, 0.3);
+		}
+	}
+}
+
+/* Механизм закрытия меню*/
+@media @mobile-and-tablet {
+	.main-nav {
+
+		&--closed &__item {
+			display: none;
+			border: none;
+
+			&--active {
+				display: block;
+			}
+		}
+
+		&--nojs &__toggle {
+			display: none;
+		}
+
+		&--nojs &__item {
+			display: block;
+		}
+	}
+}
+/*конец*/
+
+@media @tablet-width {
+	.main-nav {
+
+		&__item {
+			padding: 20px;
+		}
+
+		&__toggle {
+			height: 68px;
+		}
+
+		&--closed &__toggle::before {
+			top: 25px;
+		}
+
+		&--opened &__toggle {
+
+			&::before,
+			&::after {
+				top: 32px;
+			}
+		}
+	}
+}
+
+@media @desktop-width {
+	.main-nav{
+		width: auto;
+		margin: 0;
+
+		&__wrapper {
+			.container();
+			.clearfix();
+		}
+
+		&__toggle {
+			display: none;
+		}
+
+		&__list {
+			float: right;
+			margin-top: 25px;
+			font-size: 0;
+		}
+
+		&__item {
+			display: inline-block;
+			padding: 15px;
+			font-size: 18px;
+			line-height: 27px;
+			text-align: center;
+			vertical-align: top;
+			border-bottom: none;
+
+			a {
+				display: block;
+			}
+		}
+	}
+
+}
