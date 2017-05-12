@@ -12,3 +12,10 @@ navToggle.addEventListener('click', function() {
     navMain.classList.remove('main-nav--opened');
   }
 });
+
+/* function btnUncheck() {
+  var slideBtn = document.querySelector('#btn-2');
+  if (window.innerWidth == '1200px') {
+    slideBtn.checked = false;
+  }
+} */

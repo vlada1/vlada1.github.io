@@ -1,0 +1,64 @@
+.article {
+	background: url("../img/bkg.svg") no-repeat 0 1000px;
+  background-size: 100% 100%;
+
+  padding-bottom: 25px;
+
+  font-size: 13px;
+	line-height: 22px;
+  text-align: justify;
+
+  &__title {
+    margin-top: 40px;
+  }
+
+  &__title,
+  h3 {
+    text-align: center;
+  }
+
+  &__title-ru,
+  &__title-ukr {
+    margin-bottom: 0;
+  }
+
+  &__author {
+    display: block;
+    padding-bottom: 5px;
+    text-align: center;
+  }
+
+  &__img {
+    padding-bottom: 10px;
+    text-align: center;
+    font-size: 11px;
+  	line-height: 20px;
+  }
+
+  &__ref-list {
+    margin: 0;
+    padding: 15px;
+  }
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+@media @tablet-width {
+  .article {
+
+    &__wrapper {
+      -webkit-column-width: 340px;
+      -moz-column-width: 340px;
+      column-width: 340px;
+      -webkit-column-count: 2;
+      -moz-column-count: 2;
+      column-count: 2;
+      -webkit-column-gap: 20px;
+      -moz-column-gap: 20px;
+      column-gap: 20px;
+    }
+  }
+
+}

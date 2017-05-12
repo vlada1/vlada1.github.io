@@ -1,0 +1,74 @@
+.contact {
+
+	background: url("../img/bkg.svg") no-repeat 0 150px;
+  background-size: 100% 100%;
+
+	padding-top: 5px;
+	padding-bottom: 50px;
+	font-size: 15px;
+	line-height: 24px;
+
+
+	&__data {
+		position: relative;
+		margin-top: 15px;
+		font-size: 13px;
+		line-height: 22px;
+
+		&::after {
+			content: "";
+			position: absolute;
+			bottom: -26px;
+			left: 130px;
+			width: 40px;
+			height: 3px;
+			background-color: @bordercolor;
+		}
+	}
+}
+
+@media @tablet-width {
+	.contact {
+		width: auto;
+		margin: 0;
+		font-size: 16px;
+		line-height: 25px;
+		text-align: justify;
+
+
+		&__data {
+			font-size: 14px;
+			line-height: 23px;
+
+			&::after {
+
+				left: 300px;
+				width: 100px;
+				height: 3px;
+				background-color: @bordercolor;
+			}
+		}
+	}
+
+}
+
+@media @desktop-width {
+	.contact {
+
+		&__face {
+			text-align: center;
+		}
+
+		&__data {
+			text-align: center;
+			&::after {
+
+				left: 475px;
+				width: 150px;
+				height: 3px;
+				background-color: @bordercolor;
+			}
+		}
+	}
+
+}

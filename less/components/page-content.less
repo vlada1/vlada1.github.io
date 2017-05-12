@@ -1,0 +1,22 @@
+.page-content {
+	width: 300px;
+	margin: 0 auto;
+
+	&__title {
+		margin-top: 40px;
+		text-align: center;
+	}
+}
+
+@media @tablet-width {
+
+	.page-content {
+		width: auto;
+		margin: 0;
+
+		&__wrapper {
+			.container();
+		}
+	}
+
+}
