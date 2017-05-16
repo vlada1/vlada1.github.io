@@ -12,6 +12,7 @@ navToggle.addEventListener('click', function() {
     navMain.classList.remove('main-nav--opened');
   }
 });
+<<<<<<< HEAD
 
 /* function btnUncheck() {
   var slideBtn = document.querySelector('#btn-2');
@@ -19,3 +20,5 @@ navToggle.addEventListener('click', function() {
     slideBtn.checked = false;
   }
 } */
+=======
+>>>>>>> 8388b4223d176b437a6c70a5f3f3084c780f5695
